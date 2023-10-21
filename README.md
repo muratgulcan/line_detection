@@ -64,3 +64,20 @@ blended = cv2.addWeighted(src1=img1, alpha=0.9, src2=img2, beta=0.1, gamma = 0)
 ```
 
 Alpha, beta ve gamma değerleri duruma göre değiştirilebilir.
+
+## Görüntü Eşikleme (Image Thresholding)
+
+OpenCV'de görüntü eşikleme(image thresholding), bir gri tonlu veya renkli görüntüdeki pikselleri belirli bir eşik değeriyle karşılaştırarak, bu değeri geçen pikselleri belirli bir değere ayarlayarak veya belirli bir değere göre işleyerek görüntüyü sadeleştiren bir işlemdir.
+
+Görüntü eşikleme işlemi, nesne algılama, nesne ayırma ve görüntü analizi gibi birçok uygulamada kullanılır. Örneğin, kenar tespiti, nesne tanıma veya nesne sayma gibi işlemlerde yaygın olarak kullanılır.
+Görüntü eşikleme işleminin amacı, görüntüdeki önemli özellikleri (örneğin kenarlar veya nesneler) belirginleştirmek veya diğer işlemler için veriyi hazırlamaktır.
+
+Görüntü işlemede görselleri gri tona çevirmenin birkaç sebebi vardır ve bu durumlarla ilgili ufak bir not paylaşmak gerekirse:
+
+* **İşlem Hızı:** Renkli görüntüler daha fazla veri içerir (her piksel için 3 renk kanalı: kırmızı, yeşil, mavi). Gri tonlu görüntüler sadece bir kanala sahiptir. Bu nedenle, gri tonlu görüntülerin işlenmesi genellikle daha hızlıdır.
+* **Bellek ve Depolama Verimliliği:** Bir önceki sebebe istinaden, daha az veri demek az depolama alanı demektir. Gri tonlu görüntüler, renkli görüntülere göre daha az bellek ve depolama alanı gerektirir.
+* **Yeterli Bilgi:** Birçok durumda, rengin tamamıyla ilgili değil, sadece ışık yoğunluğuyla ilgilenilir. Örneğin, kenar algılama veya görüntü eşikleme gibi birçok temel görüntü işleme tekniği, renk bilgisine ihtiyaç duymaz.
+* **Azaltılmış Gürültü:** Renkli görüntüler genellikle daha fazla gürültüye sahiptir. Gri tonlu formata dönüştürmek, bu gürültünün bir kısmını azaltabilir.
+* **Sadeleştirme:** Bazı analizler ve algoritmalar için, sadece ışık yoğunluğu bilgisinin kullanılması daha anlamlıdır.
+
+Ancak, renk bilgisinin önemli olduğu durumlarda (örneğin, nesne tanıma veya renk analizi gibi uygulamalarda), renkli görüntü formunu kullanmak gerekebilir. Bu durumda, renk dönüşümü (örneğin, BGR'den RGB'ye veya RGB'den HSV'ye) işlemleri kullanılır.
