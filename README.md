@@ -36,25 +36,24 @@ Bir nesneye belli bir açıda baktığımızda onun ne olduğunu kavrayabiliriz.
 
 İlk olarak kolay kısımdan başlanarak nihai görselin boyutu belirlenir:
 
-width = 400
-height = 500
+`width = 400`
+`height = 500`
 
 Point1 ve point2 belirleyerek ilgili görselimizin dört köşesinin piksel değerleri olacaktır. Point1 olarak belirlediğimiz değer görselin dört köşesidir ve point2 olarak belirlediğimiz noktalar ise görseli getirmek istediğimiz noktalardır.
 
-pts1 = np.float32([[25,420],[581,29],[581,418],[24,31]])
-pts2 = np.float32([[0,0],[0,height],[width,0],[width,height]])
+`pts1 = np.float32([[25,420],[581,29],[581,418],[24,31]])`
+`pts2 = np.float32([[0,0],[0,height],[width,0],[width,height]])`
 
 Dönüştürme matrisleri ile son görünüm elde edilir. Bunun için biraz pratik ve mantıkla koordinatlar belirlenir. Hangi noktanın nereye geleceği hesaplamalar sonucu ilgili koordinatların nihai değerleri bulunur.
 
-matrix = cv2.getPerspectiveTransform(pts1,pts2)
+`matrix = cv2.getPerspectiveTransform(pts1,pts2)`
 # nihai görsel
-img_output = cv2.warpPerspective(image,matrix,(width,height))
+`img_output = cv2.warpPerspective(image,matrix,(width,height))`
 
 ## Görüntüleri Birleştirmek
 
 Kimi durumlarda birden fazla görseli tek bir görselde görmek isteyebiliriz. Örneğin; deniz manzaralı bir görselimiz ve çöl manzaralı bir görselimiz var. Bu iki görseli iç içe konumlandırarak tek bir görselde oluşturarak istenilen durumlarda kullanılabilir hale getirilebilir. Yazılıma ilgili fotoğraf dahil edilmesinin ardından görüntüleri birleştirmek için kullanılan ilgili kod alpha, beta ve gamma değerleriyle birlikte şu şekilde yazılır:
 
-```python
-blended = cv2.addWeighted(src1=img1, alpha=0.9, src2=img2, beta=0.1, gamma = 0)
+`blended = cv2.addWeighted(src1=img1, alpha=0.9, src2=img2, beta=0.1, gamma = 0)`
 
 Alpha, beta ve gamma değerleri duruma göre değiştirilebilir.
