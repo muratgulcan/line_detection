@@ -8,7 +8,7 @@ plt.imshow(img, cmap="gray")
 plt.axis("off")
 plt.show()
 
-#threshold (eşikleme)
+#threshold
 _, thresh_img = cv2.threshold(img, thresh=60, maxval=255, type=cv2.THRESH_BINARY)
 plt.figure()
 plt.imshow(thresh_img, cmap="gray")
