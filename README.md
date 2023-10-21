@@ -59,6 +59,8 @@ img_output = cv2.warpPerspective(image,matrix,(width,height))
 
 Kimi durumlarda birden fazla görseli tek bir görselde görmek isteyebiliriz. Örneğin; deniz manzaralı bir görselimiz ve çöl manzaralı bir görselimiz var. Bu iki görseli iç içe konumlandırarak tek bir görselde oluşturarak istenilen durumlarda kullanılabilir hale getirilebilir. Yazılıma ilgili fotoğraf dahil edilmesinin ardından görüntüleri birleştirmek için kullanılan ilgili kod alpha, beta ve gamma değerleriyle birlikte şu şekilde yazılır:
 
-`blended = cv2.addWeighted(src1=img1, alpha=0.9, src2=img2, beta=0.1, gamma = 0)`
+```
+blended = cv2.addWeighted(src1=img1, alpha=0.9, src2=img2, beta=0.1, gamma = 0)
+```
 
 Alpha, beta ve gamma değerleri duruma göre değiştirilebilir.
