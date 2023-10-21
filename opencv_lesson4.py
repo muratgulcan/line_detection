@@ -23,7 +23,7 @@ plt.imshow(img1)
 plt.figure()
 plt.imshow(img2)
 
-# karıştırılmış resim = alpha*img1 + beta*img2
+# karıştırılmış resim = alpha * img1 + beta * img2
 blended = cv2.addWeighted(src1=img1, alpha=0.9, src2=img2, beta=0.1, gamma = 0)
 plt.figure()
 plt.imshow(blended)
