@@ -108,4 +108,3 @@ plt.show()
 `maxval=255`: Eşik değerini geçen piksellerin alacağı maksimum değer. Yani, eşik değerini geçen pikseller bu değere ayarlanır. Bu genellikle 255 olarak ayarlanır, çünkü bu değer en parlak değeri temsil eder (beyaz).
 
 `type=cv2.THRESH_BINARY`: Bu, eşikleme türünü belirtir. `cv2.THRESH_BINARY`, eşik değerini geçen pikselleri maxval değerine ayarlar, geçmeyenleri ise 0'a ayarlar. Yani, eşiklemeden sonra sadece siyah ve beyaz pikseller olur.
-
