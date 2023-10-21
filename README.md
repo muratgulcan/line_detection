@@ -81,3 +81,30 @@ Görüntü işlemede görselleri gri tona çevirmenin birkaç sebebi vardır ve 
 * **Sadeleştirme:** Bazı analizler ve algoritmalar için, sadece ışık yoğunluğu bilgisinin kullanılması daha anlamlıdır.
 
 Ancak, renk bilgisinin önemli olduğu durumlarda (örneğin, nesne tanıma veya renk analizi gibi uygulamalarda), renkli görüntü formunu kullanmak gerekebilir. Bu durumda, renk dönüşümü (örneğin, BGR'den RGB'ye veya RGB'den HSV'ye) işlemleri kullanılır.
+
+Örnek kod üzerinden ilerleyecek olursak:
+```
+img = cv2.imread('./public/images/image.jpeg') 
+#cv2.cvtColor fonksiyonunu kullanarak görüntüyü renkli (BGR) formatından gri tonlu formata dönüştürür. Böylece, img değişkenimiz artık bir gri tonlu görüntüdür.
+img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+plt.figure()
+#img değişkenini gri tonlu görüntüyü matplotlib ile gösterir. cmap="gray" argümanı, görüntünün gri tonlamasının doğru bir şekilde gösterilmesini sağlar.
+plt.imshow(img, cmap="gray")
+plt.axis("off")
+plt.show()
+
+#threshold
+_, thresh_img = cv2.threshold(img, thresh=80, maxval=255, type=cv2.THRESH_BINARY)
+plt.figure()
+plt.imshow(thresh_img, cmap="gray")
+plt.axis("off")
+plt.show()
+```
+
+`_, thresh_img: cv2.threshold`: döndürdüğü iki değer vardır. Birincisi, kullanılan eşik değeri ve ikincisi eşiklenmiş görüntü (thresh_img). Birinci değeri (_) genellikle kullanılmaz, bu nedenle genellikle alt çizgi (_) ile gösterilir. Eşiklenmiş görüntü, thresh_img değişkenine atanır ve bu işlem sonucu bu görüntüye erişebilirsiniz. 
+
+`thresh=80`: Eşik değeri olarak kullanılacak sayı. Bu değer, piksellerin gri ton seviyelerini temsil eder. Eşik değerinden küçük olan pikseller 0 (siyah) olarak ayarlanır, eşik değerinden büyük olanlar ise maxval değeri olarak ayarlanır.
+
+`maxval=255`: Eşik değerini geçen piksellerin alacağı maksimum değer. Yani, eşik değerini geçen pikseller bu değere ayarlanır. Bu genellikle 255 olarak ayarlanır, çünkü bu değer en parlak değeri temsil eder (beyaz).
+
+`type=cv2.THRESH_BINARY`: Bu, eşikleme türünü belirtir. `cv2.THRESH_BINARY`, eşik değerini geçen pikselleri maxval değerine ayarlar, geçmeyenleri ise 0'a ayarlar. Yani, eşiklemeden sonra sadece siyah ve beyaz pikseller olur.
