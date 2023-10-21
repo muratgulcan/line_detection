@@ -47,7 +47,7 @@ Point1 ve point2 belirleyerek ilgili görselimizin dört köşesinin piksel değ
 Dönüştürme matrisleri ile son görünüm elde edilir. Bunun için biraz pratik ve mantıkla koordinatlar belirlenir. Hangi noktanın nereye geleceği hesaplamalar sonucu ilgili koordinatların nihai değerleri bulunur.
 
 `matrix = cv2.getPerspectiveTransform(pts1,pts2)`
-# nihai görsel
+#nihai görsel
 `img_output = cv2.warpPerspective(image,matrix,(width,height))`
 
 ## Görüntüleri Birleştirmek
