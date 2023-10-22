@@ -162,3 +162,11 @@ Ortalama, Gauss ve Medyan Bulanıklaştırma yöntemlerinin aralarındaki farkı
 | Parlak ve Açık Alanlar | Parlak ve açık alanlarda daha etkilidir. | Orta seviyede etkilidir. | Daha etkisiz, parlak alanlarda daha az etkilidir. |
 | Büyük Gürültü | Büyük gürültü durumlarında etkili olabilir. | Büyük gürültüyü azaltmakta sınırlıdır. | Büyük gürültüyü azaltmada etkili değildir. |
 | Çözünürlük Kaybı | Daha az çözünürlük kaybı yaşanır. | Orta düzeyde çözünürlük kaybı yaşanır. | Daha fazla çözünürlük kaybı yaşanır. |
+
+**Not:** Kernel boyutu, görüntü işleme filtrelerinde kullanılan bir matrisin boyutunu belirtir. Bu matris, bir pikselin değerini hesaplamak için çevresindeki piksellerin değerlerini kullanır.
+
+Örneğin, 3x3 boyutunda bir kernel, bir pikselin etrafındaki 3x3 pikselin değerlerini kullanarak işlem yapar. 5x5 boyutunda bir kernel, 5x5 pikselin değerlerini kullanır ve benzer şekilde çalışır.
+
+Kernel boyutu, belirli bir uygulamanın gereksinimlerine ve görüntünün özelliklerine bağlı olarak seçilir. Genellikle, daha büyük bir kernel daha fazla komşu pikselin değerini dikkate alır ve daha yumuşak bir sonuç üretir. Ancak bu aynı zamanda işlemin daha yavaş çalışmasına neden olabilir.
+
+Bu değerler, uygulamanın gereksinimlerine bağlı olarak değişebilir. Daha büyük kernel boyutları, daha fazla komşu pikselin değerini dikkate alarak daha fazla bulanıklaştırma sağlar, ancak işlem süresi artabilir.
