@@ -117,7 +117,9 @@ Görüntü bulanıklaştırma, bir filtre kullanarak gerçekleştirilir. Bu filt
 
 Görüntü işlemede görüntü bulanıklaştırma türleri şu şekilde sıralanabilir:
 
-### **Ortalama Bulanıklaştırma (Mean Blurring):** Ortalama Bulanıklaştırma (Mean Blurring), bir görüntünün her pikselini belirli bir bölge içindeki diğer piksellerin ortalamasıyla değiştirerek görüntüyü yumuşatma işlemidir. Bu işlem, bir pikselin değerini çevresindeki piksellerin ortalaması ile değiştirerek çalışır. Bu bulanıklaştırmanın algoritması şu şekildedir:
+### Ortalama Bulanıklaştırma (Mean Blurring)
+
+Ortalama Bulanıklaştırma (Mean Blurring), bir görüntünün her pikselini belirli bir bölge içindeki diğer piksellerin ortalamasıyla değiştirerek görüntüyü yumuşatma işlemidir. Bu işlem, bir pikselin değerini çevresindeki piksellerin ortalaması ile değiştirerek çalışır. Bu bulanıklaştırmanın algoritması şu şekildedir:
 
 1. Görüntünün her pikseli için, belirli bir bölge (örneğin, bir kutu veya bir çekirdek) seçilir.
 2. Seçilen bölge içindeki piksellerin değerlerinin toplamı alınır.
@@ -126,7 +128,9 @@ Görüntü işlemede görüntü bulanıklaştırma türleri şu şekilde sırala
 
 Bu işlem, görüntüdeki gürültüyü azaltmak için etkilir çünkü her piksel, çevresindeki piksellerin değerlerinin ortalaması ile temsil edilir. Bu sayede, tek pikselin anormal değerleri veya gürültü, ortalamaya karıştırılır ve sonuçta daha yumuşak bir görüntü elde edilir. Örnek olarak 3x3 bir ortalamaya alma işlemi düşünelim. Bu durumda her piksel, kendisi ve çevresindeki 8 piksel değerlerinin ortalaması ile değişir. Bu işlem, pikselin etrafındaki küçük bir bölgeyi dikkate alarak çalışır. 
 
-### **Gauss Bulanıklaştırma (Gauss Blurring):** Gauss bulanıklaştırma, bir görüntünün her pikselini çevresindeki piksellerin ağırlıklı ortalaması ile değiştirerek görüntüyü yumuşatma işlemidir. Bu ağırlıklar, Gauss fonksiyonunun değerleridir ve merkez piksele olan uzaklık ile belirlenir. Bu sayede, daha fazla ağırlık verilen piksellerin, merkez pikselin değerini daha fazla etkilemesi sağlanır. Dolayısıyla her pikselin değerini hesaplamak için bir Gauss fonksiyonu kullanır.
+### **Gauss Bulanıklaştırma (Gauss Blurring)
+
+Gauss bulanıklaştırma, bir görüntünün her pikselini çevresindeki piksellerin ağırlıklı ortalaması ile değiştirerek görüntüyü yumuşatma işlemidir. Bu ağırlıklar, Gauss fonksiyonunun değerleridir ve merkez piksele olan uzaklık ile belirlenir. Bu sayede, daha fazla ağırlık verilen piksellerin, merkez pikselin değerini daha fazla etkilemesi sağlanır. Dolayısıyla her pikselin değerini hesaplamak için bir Gauss fonksiyonu kullanır.
 
 Algoritmanın adımları:
 
