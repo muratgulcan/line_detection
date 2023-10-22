@@ -126,16 +126,12 @@ Görüntü işlemede görüntü bulanıklaştırma türleri şu şekilde sırala
 
 Bu işlem, görüntüdeki gürültüyü azaltmak için etkilir çünkü her piksel, çevresindeki piksellerin değerlerinin ortalaması ile temsil edilir. Bu sayede, tek pikselin anormal değerleri veya gürültü, ortalamaya karıştırılır ve sonuçta daha yumuşak bir görüntü elde edilir. Örnek olarak 3x3 bir ortalamaya alma işlemi düşünelim. Bu durumda her piksel, kendisi ve çevresindeki 8 piksel değerlerinin ortalaması ile değişir. Bu işlem, pikselin etrafındaki küçük bir bölgeyi dikkate alarak çalışır. 
 
-Algoritmanın matematiksel ifadesi şu şekildedir:
+* **Gauss Bulanıklaştırma (Gauss Blurring):** Gauss bulanıklaştırma, bir görüntünün her pikselini çevresindeki piksellerin ağırlıklı ortalaması ile değiştirerek görüntüyü yumuşatma işlemidir. Bu ağırlıklar, Gauss fonksiyonunun değerleridir ve merkez piksele olan uzaklık ile belirlenir. Bu sayede, daha fazla ağırlık verilen piksellerin, merkez pikselin değerini daha fazla etkilemesi sağlanır. Dolayısıyla her pikselin değerini hesaplamak için bir Gauss fonksiyonu kullanır.
 
-```math
-I(x, y) = \frac{1}{{K \cdot K}} \sum_{i=-\frac{K}{2}}^{\frac{K}{2}} \sum_{j=-\frac{K}{2}}^{\frac{K}{2}} I(x+i, y+j)
-```
+Algoritmanın adımları:
 
-Burada: 
-* I(x,y), yeni değer atanacak pikselin koordinatlarıdır.
-* k, bölgenin boyutudur (örneğin 3x3 için k = 3).
-* {{I(x+i, y+j)}}, seçilen bölgedeki piksellerin değeridir.
-* Toplam, bölgenin boyutuna bölünerek ortalaması alınır.
+1. Görüntünün her pikseli için, belirli bir bölge (örneğin, bir kutu veya bir çekirdek) seçilir. Bu bölge genellikle simetrik bir şekilde olur.
+2. Seçilen bölge içindeki her pikselin değeri, bir Gauss fonksiyonu tarafından belirlenen ağırlıklarla çarpılarak toplanır.
+3. Bu toplam, bölgenin alanına bölünerek ağırlıklı ortalaması hesaplanır.
+4. Ağırlıklı ortalama değer, pikselin yeni değeri olarak atanır.
 
-Bu şekilde, her piksel, çevresindeki piksellerin ortalamasıyla değiştirilerek görüntüdeki gürültü azaltılır.
