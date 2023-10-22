@@ -108,3 +108,32 @@ plt.show()
 `maxval=255`: Eşik değerini geçen piksellerin alacağı maksimum değer. Yani, eşik değerini geçen pikseller bu değere ayarlanır. Bu genellikle 255 olarak ayarlanır, çünkü bu değer en parlak değeri temsil eder (beyaz).
 
 `type=cv2.THRESH_BINARY`: Bu, eşikleme türünü belirtir. `cv2.THRESH_BINARY`, eşik değerini geçen pikselleri maxval değerine ayarlar, geçmeyenleri ise 0'a ayarlar. Yani, eşiklemeden sonra sadece siyah ve beyaz pikseller olur.
+
+## Görüntü Bulanıklaştırma (Image Blurring)
+
+Görüntü bulanıklaştırma, bir görüntünün üzerindeki detayları yumuşatarak ve piksel değerlerini düzenleyerek, görüntüdeki gürültüyü azaltmak veya önemli özellikleri vurgulamak için kullanılan bir işlemdir. Bu işlem, görüntü işleme uygulamalarında yaygın olarak kullanılır.
+
+Görüntü bulanıklaştırma, bir filtre kullanarak gerçekleştirilir. Bu filtre, belirli bir pikselin değerini hesaplamak için çevresindeki piksellerin bilgilerini kullanır. Farklı filtre türleri, farklı bulanıklık etkileri oluşturur.
+
+Görüntü işlemede görüntü bulanıklaştırma türleri şu şekilde sıralanabilir:
+
+* **Ortalama Bulanıklaştırma (Mean Blurring):** Ortalama Bulanıklaştırma (Mean Blurring), bir görüntünün her pikselini belirli bir bölge içindeki diğer piksellerin ortalamasıyla değiştirerek görüntüyü yumuşatma işlemidir. Bu işlem, bir pikselin değerini çevresindeki piksellerin ortalaması ile değiştirerek çalışır. Bu bulanıklaştırmanın algoritması şu şekildedir:
+
+1. Görüntünün her pikseli için, belirli bir bölge (örneğin, bir kutu veya bir çekirdek) seçilir.
+2. Seçilen bölge içindeki piksellerin değerlerinin toplamı alınır.
+3. Bu toplam, bölgenin alanına bölünerek ortalaması hesaplanır.
+4. Ortalama değer, pikselin yeni değeri olarak atanır.
+
+Bu işlem, görüntüdeki gürültüyü azaltmak için etkilir çünkü her piksel, çevresindeki piksellerin değerlerinin ortalaması ile temsil edilir. Bu sayede, tek pikselin anormal değerleri veya gürültü, ortalamaya karıştırılır ve sonuçta daha yumuşak bir görüntü elde edilir. Örnek olarak 3x3 bir ortalamaya alma işlemi düşünelim. Bu durumda her piksel, kendisi ve çevresindeki 8 piksel değerlerinin ortalaması ile değişir. Bu işlem, pikselin etrafındaki küçük bir bölgeyi dikkate alarak çalışır. 
+
+Algoritmanın matematiksel ifadesi şu şekildedir:
+
+I(x, y) = \frac{{k \cdot k}}{{\sum_{{i=-\frac{k}{2}}}^{\frac{k}{2}} \sum_{{j=-\frac{k}{2}}}^{\frac{k}{2}} I(x+i, y+j)}}
+
+Burada: 
+* I(x,y), yeni değer atanacak pikselin koordinatlarıdır.
+* k, bölgenin boyutudur (örneğin 3x3 için k = 3).
+* {{I(x+i, y+j)}}, seçilen bölgedeki piksellerin değeridir.
+* Toplam, bölgenin boyutuna bölünerek ortalaması alınır.
+
+Bu şekilde, her piksel, çevresindeki piksellerin ortalamasıyla değiştirilerek görüntüdeki gürültü azaltılır.
