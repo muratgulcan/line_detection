@@ -129,7 +129,7 @@ Bu işlem, görüntüdeki gürültüyü azaltmak için etkilir çünkü her piks
 Algoritmanın matematiksel ifadesi şu şekildedir:
 
 ```math
-O(x, y) = \frac{1}{{K \cdot K}} \sum_{i=-\frac{K}{2}}^{\frac{K}{2}} \sum_{j=-\frac{K}{2}}^{\frac{K}{2}} I(x+i, y+j)
+I(x, y) = \frac{1}{{K \cdot K}} \sum_{i=-\frac{K}{2}}^{\frac{K}{2}} \sum_{j=-\frac{K}{2}}^{\frac{K}{2}} I(x+i, y+j)
 ```
 
 Burada: 
