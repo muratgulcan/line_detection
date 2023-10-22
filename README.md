@@ -128,7 +128,7 @@ Ortalama Bulanıklaştırma (Mean Blurring), bir görüntünün her pikselini be
 
 Bu işlem, görüntüdeki gürültüyü azaltmak için etkilir çünkü her piksel, çevresindeki piksellerin değerlerinin ortalaması ile temsil edilir. Bu sayede, tek pikselin anormal değerleri veya gürültü, ortalamaya karıştırılır ve sonuçta daha yumuşak bir görüntü elde edilir. Örnek olarak 3x3 bir ortalamaya alma işlemi düşünelim. Bu durumda her piksel, kendisi ve çevresindeki 8 piksel değerlerinin ortalaması ile değişir. Bu işlem, pikselin etrafındaki küçük bir bölgeyi dikkate alarak çalışır. 
 
-### **Gauss Bulanıklaştırma (Gauss Blurring)
+### Gauss Bulanıklaştırma (Gauss Blurring)
 
 Gauss bulanıklaştırma, bir görüntünün her pikselini çevresindeki piksellerin ağırlıklı ortalaması ile değiştirerek görüntüyü yumuşatma işlemidir. Bu ağırlıklar, Gauss fonksiyonunun değerleridir ve merkez piksele olan uzaklık ile belirlenir. Bu sayede, daha fazla ağırlık verilen piksellerin, merkez pikselin değerini daha fazla etkilemesi sağlanır. Dolayısıyla her pikselin değerini hesaplamak için bir Gauss fonksiyonu kullanır.
 
@@ -139,3 +139,29 @@ Algoritmanın adımları:
 3. Bu toplam, bölgenin alanına bölünerek ağırlıklı ortalaması hesaplanır.
 4. Ağırlıklı ortalama değer, pikselin yeni değeri olarak atanır.
 
+### Medyan Bulanıklaştırma (Median Blurring)
+
+Medyan bulanıklaştırma, bir görüntünün her pikselini belirli bir bölge içindeki piksellerin medyan değeri ile değiştirerek görüntüyü yumuşatma işlemidir. Medyan, sıralanmış değerlerin ortasındaki değeri temsil eder. Bu bulanıklaştırmanın algoritması ise şu şekildedir:
+
+1. Görüntünün her pikseli için, belirli bir bölge (örneğin, bir kare veya bir çekirdek) seçilir. Bu bölge genellikle simetrik bir şekildedir.
+2. Seçilen bölgedeki piksellerin değerleri sıralanır.
+3. Sıralı piksel değerleri arasındaki ortanca (yani, ortadaki değer) seçilir.
+4. Ortanca değer, pikselin yeni değeri olarak atanır.
+
+Ortalama, Gauss ve Medyan Bulanıklaştırma yöntemlerinin aralarındaki farkı inceleyecek olursak:
+| Özellik | Medyan Bulanıklaştırma | Gauss Bulanıklaştırma | Ortalama Bulanıklaştırma |
+| --- | --- | --- | --- |
+| Temel İlke | Piksellerin medyanı ile değiştirilir. | Ağırlıklı ortalama ile değiştirilir. | Piksellerin aritmetik ortalaması ile değiştirilir. |
+| Gürültü Azaltma | Etkili, gürültüyü azaltmada başarılıdır. | Etkili, gürültüyü azaltır ancak medyan yöntemi kadar etkili değildir. | Düzeltici, ancak gürültüyü tam olarak azaltmada diğerlerine göre daha az etkilidir. |
+| Kenar Koruma | Kenarları korur, keskin kenarlar korunur. | Kenarları biraz kaybetmez, ancak daha az korur. | Kenarları kaybetme eğilimindedir, keskin kenarlar kaybolabilir. |
+| Hesaplama Zamanı | Daha yavaş, özellikle büyük bölgelerde daha yavaş olabilir. | Daha hızlıdır, Gauss filtresi için hızlı hesaplama yöntemleri mevcuttur. | Hızlıdır, ortalama işlemi basit bir toplama işlemidir. |
+| Hassasiyet | Daha yüksek, aykırı değerlerin etkisini azaltır. | Orta, gürültüyü azaltır ancak medyan yöntemi kadar iyi değil. | Düşük, gürültüyü azaltır ancak diğer yöntemlere göre daha az etkilidir. |
+| Kullanım Alanları | Tıbbi görüntüleme, kenar tespiti, gürültü azaltma gibi uygulamalarda yaygın olarak kullanılır. | Doğal görüntü işlemede, yumuşak ve doğal görüntü bulanıklaştırma için tercih edilir. | Gürültü azaltma, keskin kenarları koruma ihtiyacı olmayan genel uygulamalarda yaygın olarak kullanılır. |
+| Uygulama Zorluğu | Uygulaması nispeten daha zordur. | Uygulaması daha kolaydır. | Uygulaması daha kolaydır. |
+| Köşeler ve Detaylar | Köşeleri ve detayları korur, daha iyi kenar algılar. | Kenarlara daha az etki eder, detayları biraz kaybedebilir. | Kenarlara daha az etki eder, detayları daha fazla kaybedebilir. |
+| Etki Süresi | Daha kısa, keskin kenarlar korunur. | Orta, gürültü azaltma sağlar. | Daha uzun, keskin kenarlar kaybolabilir. |
+| Gauss Ağırlıkları | Gauss fonksiyonunun ağırlıklarını kullanmaz. | Gauss fonksiyonunun ağırlıklarını kullanır. | Eşit ağırlıklar kullanır. |
+| Parlak ve Açık Alanlar | Parlak ve açık alanlarda daha etkilidir. | Orta seviyede etkilidir. | Daha etkisiz, parlak alanlarda daha az etkilidir. |
+| Büyük Gürültü | Büyük gürültü durumlarında etkili olabilir. | Büyük gürültüyü azaltmakta sınırlıdır. | Büyük gürültüyü azaltmada etkili değildir. |
+| Çözünürlük Kaybı | Daha az çözünürlük kaybı yaşanır. | Orta düzeyde çözünürlük kaybı yaşanır. | Daha fazla çözünürlük kaybı yaşanır. |
+| Örnek Kullanım | Tıbbi görüntülerde, röntgenlerde ve keskin kenarların korunması önemli olduğu yerlerde kullanılır. | Doğal fotoğraf düzenleme uygulamalarında yaygın olarak kullanılır. | Genel görüntü işleme uygulamalarında kullanılır. |
