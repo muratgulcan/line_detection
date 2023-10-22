@@ -167,6 +167,6 @@ Ortalama, Gauss ve Medyan Bulanıklaştırma yöntemlerinin aralarındaki farkı
 
 Örneğin, 3x3 boyutunda bir kernel, bir pikselin etrafındaki 3x3 pikselin değerlerini kullanarak işlem yapar. 5x5 boyutunda bir kernel, 5x5 pikselin değerlerini kullanır ve benzer şekilde çalışır.
 
-Kernel boyutu, belirli bir uygulamanın gereksinimlerine ve görüntünün özelliklerine bağlı olarak seçilir. Genellikle, daha büyük bir kernel daha fazla komşu pikselin değerini dikkate alır ve daha yumuşak bir sonuç üretir. Ancak bu aynı zamanda işlemin daha yavaş çalışmasına neden olabilir.
+Kernel boyutu, belirli bir uygulamanın gereksinimlerine ve görüntünün özelliklerine bağlı olarak seçilir. Genellikle, daha büyük bir kernel daha fazla komşu pikselin değerini dikkate alır ve daha yumuşak bir sonuç üretir fakat bu aynı zamanda işlemin daha yavaş çalışmasına neden olabilir.
 
-Bu değerler, uygulamanın gereksinimlerine bağlı olarak değişebilir. Daha büyük kernel boyutları, daha fazla komşu pikselin değerini dikkate alarak daha fazla bulanıklaştırma sağlar, ancak işlem süresi artabilir.
+Bu değerler, uygulamanın gereksinimlerine bağlı olarak değişebilir. Daha büyük kernel boyutları, daha fazla komşu pikselin değerini dikkate alarak daha fazla bulanıklaştırma sağlar fakat işlem süresi artabilir.
