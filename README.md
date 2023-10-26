@@ -220,3 +220,9 @@ Kapama işlemi şu adımlarla gerçekleştirilir:
 Kapama işlemi genellikle nesne konturlarını düzeltebilmek ve boşlukları doldurabilmek için kullanılır. Özellikle nesnelerin kenarlarındaki küçük boşlukları kapatmak ve nesne konturlarını düzeltmek amaçlanır.
 
 Bu işlem, genellikle bir kernel belirtilerek gerçekleştirilir. Bu kernel, genişleme ve erozyon işlemlerinde kullanılırken, işlemin ne kadar etkili olacağını belirler. 
+
+5. **Morfolojik Gradyan:** Morfolojik gradyan, bir görüntünün genişleme ve erozyon işlemlerinin farkı olarak hesaplanan bir operatörüdür. Bu işlem sonucunda, görüntünün kenarları veya bölgeler arası geçişler belirginleştirilir. Morfolojik gradyan, genellikle bir görüntünün kenarlarını, dış konturları veya bölgeler arası geçişleri belirlemek için kullanılır. 
+
+Matematiksel olarak, morfolojik gradyan şu şekilde hesaplanır:
+
+**Gradient = Dilation - Erosion**
