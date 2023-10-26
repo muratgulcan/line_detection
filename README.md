@@ -226,3 +226,17 @@ Bu işlem, genellikle bir kernel belirtilerek gerçekleştirilir. Bu kernel, gen
 Matematiksel olarak, morfolojik gradyan şu şekilde hesaplanır:
 
 **Gradient = Dilation - Erosion**
+
+**Not:** Görüntünün gradyanı, görüntüdeki yoğunluk değişikliklerini temsil eden bir vektördür. Bu vektör, her bir pikselin x ve y yönlerindeki türevlerini ifade eder. Pratikte, gradyan bilgisi, görüntünün kenarları, çizgileri ve diğer önemli özellikleri belirlemek için kullanılır. 
+
+Matematiksel olarak, bir iki boyutlu görüntünün gradyanı şu şekildedir: 
+$$
+\nabla f(\left.x_{1}, x_{2}, \ldots, x_{n}\right)=\left[\begin{array}{c}
+\dfrac{\partial f}{\partial x_1}(\left.x_{1}, x_{2}, \ldots, x_{n}\right)\\
+\dfrac{\partial f}{\partial x_2}(\left.x_{1}, x_{2}, \ldots, x_{n}\right) \\
+\vdots \\
+\dfrac{\partial f}{\partial x_n}(\left.x_{1}, x_{2}, \ldots, x_{n}\right) 
+\end{array}\right]
+$$
+
+
