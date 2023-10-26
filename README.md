@@ -30,6 +30,20 @@ OpenCV’nin bize sunmuş olduğu bir diğer özellik ise görseller üzerine ş
 - `cv2.line(img, (0,0),(512,512),(0,255,0), 3)`: Line işlevi ile görsel üzerine bir çizgi çizilebilir. İlk parametresi görselin kendisi, diğerleri sırasıyla başlangıç noktası, bitiş noktası, renk ve kalınlık olmak üzere ilgili değerler verilebilir.
 - `cv2.putText(img,"Example", (350,350), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255))`: putText, adından da anlaşılacağı üzere görselin üzerine metin eklememize yardımcı olur. İlgili parametreler sırasıyla ilk olarak görsel, metin, başlangıç noktası, font, kalınlık ve renktir.
 
+## Renk Uzayları ve Kanallar
+
+Renk uzayları ve kanallar, görüntülerin renklerini temsil etmek için kullanılan matematiksel modellerdir. Her bir renk uzayı, renk bilgisini farklı şekillerde temsil eder ve belirli uygulamalarda faydalı olabilmektedir.
+
+**1. RGB (Red, Green, Blue):** RGB renk uzayı, en yaygın olarak kullanılan renk uzaylarından biridir. Her piksel, kırmızı, yeşil ve mavi bileşenlerin bir kombinasyonuyla temsil edilir. Kırmızı (R), Yeşil (G) ve Mavi (B) kanallar, her birinin 0 ile 255 arasında değer alabileceği bir renk bileşenini temsil eder.
+
+**2. HSV (Hue, Saturation, Value):** HSV renk uzayı, rengin, doygunluğun ve parlaklığın ayrı ayrı temsil edildiği bir renk uzayıdır. Hue (H), rengi temsil eder ve 0 ila 360 arasında bir değere sahip olabilir. (Genellikle açısal bir ölçekle ifade edilir.) Saturation (S), rengin doygunluğunu temsil eder ve 0 ila 1 arasında bir değere sahip olabilir. Value (V), rengin parlaklığını temsil eder ve yine 0 ila 1 arasında bir değere sahip olabilir.
+
+**3. Lab (CIE 1976 Lab):** Lab renk uzayı, insan gözünün renk algısını daha iyi temsil etmek üzere tasarlanmıştır. L*, a*, b* kanalları vardır. L* (luma) değeri parlaklığı temsil ederken, a* ve b* değerleri renklerin yeşil-kırmızı ve mavi-sarı arasındaki renk değişimini temsil eder.
+
+**4. CMY ve CMYK:** CMY renk modeli, Siyah (Black) kanalını eklemeksizin Sian, Magenta ve Yellow renklerini karıştırarak diğer renkleri üretmeye çalışır. CMYK modeli ise Siyah (Black) kanalını ekler.
+
+Bu renk uzayları ve kanalları, farklı renk manipülasyonları, renk analizi ve renk tabanlı işlemler için kullanılır. Örneğin, renk filtreleme, nesne tespiti, görüntü eşitleme gibi birçok uygulamada faydalı olabilirler.
+
 ## Perspektif Çarpıtma
 
 Bir nesneye belli bir açıda baktığımızda onun ne olduğunu kavrayabiliriz. Aynı nesnenin açısı biraz döndürüldüğünde gördüğümüz nesnenin ufak bir açıyla döndürüldüğünü gözlemleyebiliriz ve bu durumu yadırgamayız çünkü aynı nesne olduğunun bilincinde olmuş oluruz. Söz konusu makineler olunca bu durum biraz farklı işliyor. Makineye bir nesne tanıttığımızda makine o nesneyi algılar ve hafızasına kaydeder fakat aynı nesneyi ufak bir açıyla döndürüp makinenin nesneyi tanımasını istediğimizde makine bunu yeni bir nesneymiş gibi algılar ve istemediğimiz sonuçlar elde ederiz. Bu nedenle görsellerin perspektifini değiştirerek verileri çoğaltmalıyız. 
