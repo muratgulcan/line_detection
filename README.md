@@ -177,7 +177,7 @@ Bu değerler, uygulamanın gereksinimlerine bağlı olarak değişebilir. Daha b
 
 OpenCV'de morfolojik operasyonlar, görüntüler üzerinde şekil ve yapı değişikliklerini gerçekleştiren temel işlemlerdir. Bu operasyonlar genellikle ikili (siyah-beyaz) görüntüler üzerinde uygulanır.
 
-1. **Erozyon (Erosion):** Erozyon, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, bir yapıyı küçültmek veya vurgulamak için kullanılır. Özellikle görüntülerdeki kenarları ve ince detayları belirginlestirmek için kullanılır. Erozyon işlemi şu adımlarla gerçekleştirilir:
+**1. Erozyon (Erosion):** Erozyon, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, bir yapıyı küçültmek veya vurgulamak için kullanılır. Özellikle görüntülerdeki kenarları ve ince detayları belirginlestirmek için kullanılır. Erozyon işlemi şu adımlarla gerçekleştirilir:
 
 1. Bir 'kernel' veya 'structuring element' adı verilen küçük bir matris belirlenir. Bu kernel, görüntü üzerinde kaydırılırken kullanılır. 
 2. Kernel, görüntünün her pikseline yerleştirilir ve merkeziyle hizalanır. Bu işlem sırasında kernel, görüntü üzerinde kaydırılır. 
@@ -189,7 +189,7 @@ Bu işlem, genellikle nesnelerin kenarlarını ve ince yapılarını vurgulamak 
 
 Erozyon, genellikle açma(opening) işlemi ile birlikte kullanılır. Açma işlemi, önce erozyon ve ardından genişleme işleminin uygulanmasıdır. Bu kombinasyon, gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için etkili bir yöntemdir.
 
-2. **Genişleme (Dilation):** Genişleme, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, bir yapıyı genişletmek veya belirginleştirmek için kullanılır. Özellikle görüntülerdeki kenarları ve kalın yapıları belirginleştirmek amacıyla kullanılır. Genişleme işlemi şu adımlarla gerçekleştirilir: 
+**2. Genişleme (Dilation):** Genişleme, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, bir yapıyı genişletmek veya belirginleştirmek için kullanılır. Özellikle görüntülerdeki kenarları ve kalın yapıları belirginleştirmek amacıyla kullanılır. Genişleme işlemi şu adımlarla gerçekleştirilir: 
 
 1. Bir 'kernel' veya 'structuring element' adı verilen küçük bir matris belirlenir. Bu kernel, görüntü üzerinde kaydırılırken kullanılır. 
 2. Kernel, görüntünün her pikseline yerleştirilir ve merkeziyle hizalanır. Bu işlem sırasında kernel, görüntü üzerinde kaydırılır. 
@@ -199,7 +199,7 @@ Bu işlem, genellikle nesnelerin kenarlarını ve kalın yapıları belirginleş
 
 Genişleme, genellikle kapanma(closing) işlemi ile birlikte kullanılır. Kapanma işlemi, önce genişleme ve ardından erozyon işleminin uygulanmasıdır. Bu kombinasyon, nesne konturlarını düzeltebilmek ve nesneleri vurgulamak için etkili bir yöntemdir. 
 
-3. **Açma (Opening):** Açma, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, özellikle gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için kullanılır. 
+**3. Açma (Opening):** Açma, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, özellikle gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için kullanılır. 
 
 Açma işlemi şu adımlarla gerçekleştirilir:
 
@@ -210,7 +210,7 @@ Açma işlemi genellikle gürültüyü azaltmak ve nesne konturlarını düzelte
 
 Bu işlem, genellikle bir "structuring element" (kernel) belirtilerek gerçekleştirilir. Bu kernel, erozyon ve genişleme işlemlerinde kullanılırken, işlemin ne kadar etkili olacğaını belirler. 
 
-4. **Kapama (Closing):** Kapanma, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, nesne konturlarını düzeltmek ve boşlukları doldurmak için kullanılır.
+**4. Kapama (Closing):** Kapanma, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, nesne konturlarını düzeltmek ve boşlukları doldurmak için kullanılır.
 
 Kapama işlemi şu adımlarla gerçekleştirilir:
 
@@ -221,7 +221,7 @@ Kapama işlemi genellikle nesne konturlarını düzeltebilmek ve boşlukları do
 
 Bu işlem, genellikle bir kernel belirtilerek gerçekleştirilir. Bu kernel, genişleme ve erozyon işlemlerinde kullanılırken, işlemin ne kadar etkili olacağını belirler. 
 
-5. **Morfolojik Gradyan:** Morfolojik gradyan, bir görüntünün genişleme ve erozyon işlemlerinin farkı olarak hesaplanan bir operatörüdür. Bu işlem sonucunda, görüntünün kenarları veya bölgeler arası geçişler belirginleştirilir. Morfolojik gradyan, genellikle bir görüntünün kenarlarını, dış konturları veya bölgeler arası geçişleri belirlemek için kullanılır. 
+**5. Morfolojik Gradyan:** Morfolojik gradyan, bir görüntünün genişleme ve erozyon işlemlerinin farkı olarak hesaplanan bir operatörüdür. Bu işlem sonucunda, görüntünün kenarları veya bölgeler arası geçişler belirginleştirilir. Morfolojik gradyan, genellikle bir görüntünün kenarlarını, dış konturları veya bölgeler arası geçişleri belirlemek için kullanılır. 
 
 Matematiksel olarak, morfolojik gradyan şu şekilde hesaplanır:
 
