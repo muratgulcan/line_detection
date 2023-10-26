@@ -188,3 +188,35 @@ Bu işlem, genellikle nesnelerin kenarlarını ve ince yapılarını vurgulamak 
 Örnek bir uygulama, siyah arkaplan üzerinde beyaz nesnelerin olduğu bir görüntüde erozyon işlemi uygulandığında nesnelerin kenarlarının ve ince yapıların daha belirgin hale gelmesidir.
 
 Erozyon, genellikle açma(opening) işlemi ile birlikte kullanılır. Açma işlemi, önce erozyon ve ardından genişleme işleminin uygulanmasıdır. Bu kombinasyon, gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için etkili bir yöntemdir.
+
+2. **Genişleme (Dilation):** Genişleme, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, bir yapıyı genişletmek veya belirginleştirmek için kullanılır. Özellikle görüntülerdeki kenarları ve kalın yapıları belirginleştirmek amacıyla kullanılır. Genişleme işlemi şu adımlarla gerçekleştirilir: 
+
+1. Bir 'kernel' veya 'structuring element' adı verilen küçük bir matris belirlenir. Bu kernel, görüntü üzerinde kaydırılırken kullanılır. 
+2. Kernel, görüntünün her pikseline yerleştirilir ve merkeziyle hizalanır. Bu işlem sırasında kernel, görüntü üzerinde kaydırılır. 
+3. Eğer kernelin içindeki tüm pikseller, orjinal görüntünün üzerinde kaplanıyorsa, bu merkez pikselin değeri değiştirilmez. Eğer en az bir piksel, kernelin dışında kalıyorsa, merkez pikselin değeri kernelin içindeki en küçük değere eşitlenir.
+
+Bu işlem, genellikle nesnelerin kenarlarını ve kalın yapıları belirginleştirmek için kullanılır. Özellikle bir nesnenin kenarlarına ek pikseller eklemek suretiyle nesne konturlarını daha belirgin hale getirmek amacıyla kullanılır.
+
+Genişleme, genellikle kapanma(closing) işlemi ile birlikte kullanılır. Kapanma işlemi, önce genişleme ve ardından erozyon işleminin uygulanmasıdır. Bu kombinasyon, nesne konturlarını düzeltebilmek ve nesneleri vurgulamak için etkili bir yöntemdir. 
+
+3. **Açma (Opening):** Açma, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, özellikle gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için kullanılır. 
+
+Açma işlemi şu adımlarla gerçekleştirilir:
+
+1. Erozyon işlemi uygulanır. Erozyon, görüntüdeki küçük detayları, ince yapıları ve gürültüyü azaltır.
+2. Ardından, bu erozyon işlemi sonucunda oluşan görüntü üzerinde genişleme işlemi uygulanır. Genişleme, önceli adımda küçülen yapıları ve nesne konturlarını tekrar belirginleştirir.
+
+Açma işlemi genellikle gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için kullanılır. Özellikle siyah noktalar, beyaz zemin üzerinde bulunan küçük detaylar veya ince yapılar gibi durumları düzeltebilmek amacıyla tercih edilir.
+
+Bu işlem, genellikle bir "structuring element" (kernel) belirtilerek gerçekleştirilir. Bu kernel, erozyon ve genişleme işlemlerinde kullanılırken, işlemin ne kadar etkili olacğaını belirler. 
+
+4. **Kapama (Closing):** Kapanma, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, nesne konturlarını düzeltmek ve boşlukları doldurmak için kullanılır.
+
+Kapama işlemi şu adımlarla gerçekleştirilir:
+
+1. Genişleme işlemi uygulanır. Bu, özellikle nesne konturlarını düzeltmek ve boşlukları doldurmak için kullanılır.
+2. Ardından, bu genişleme işlemi sonucunda oluşan görüntü erozyon işlemi uygulanır. Erozyon, genişlemiş yapıları ve nesne konturlarını tekrar düzelten bir işlemdir.
+
+Kapama işlemi genellikle nesne konturlarını düzeltebilmek ve boşlukları doldurabilmek için kullanılır. Özellikle nesnelerin kenarlarındaki küçük boşlukları kapatmak ve nesne konturlarını düzeltmek amaçlanır.
+
+Bu işlem, genellikle bir kernel belirtilerek gerçekleştirilir. Bu kernel, genişleme ve erozyon işlemlerinde kullanılırken, işlemin ne kadar etkili olacağını belirler. 
