@@ -109,7 +109,7 @@ plt.show()
 
 `type=cv2.THRESH_BINARY`: Bu, eşikleme türünü belirtir. `cv2.THRESH_BINARY`, eşik değerini geçen pikselleri maxval değerine ayarlar, geçmeyenleri ise 0'a ayarlar. Yani, eşiklemeden sonra sadece siyah ve beyaz pikseller olur.
 
-## Görüntü Bulanıklaştırma (Image Blurring)
+## Görüntü Bulanıklaştırma (Image Blurring)
 
 Görüntü bulanıklaştırma, bir görüntünün üzerindeki detayları yumuşatarak ve piksel değerlerini düzenleyerek, görüntüdeki gürültüyü azaltmak veya önemli özellikleri vurgulamak için kullanılan bir işlemdir. Bu işlem, görüntü işleme uygulamalarında yaygın olarak kullanılır.
 
