@@ -163,10 +163,28 @@ Ortalama, Gauss ve Medyan Bulanıklaştırma yöntemlerinin aralarındaki farkı
 | Büyük Gürültü | Büyük gürültü durumlarında etkili olabilir. | Büyük gürültüyü azaltmakta sınırlıdır. | Büyük gürültüyü azaltmada etkili değildir. |
 | Çözünürlük Kaybı | Daha az çözünürlük kaybı yaşanır. | Orta düzeyde çözünürlük kaybı yaşanır. | Daha fazla çözünürlük kaybı yaşanır. |
 
-**Not:** Kernel boyutu, görüntü işleme filtrelerinde kullanılan bir matrisin boyutunu belirtir. Bu matris, bir pikselin değerini hesaplamak için çevresindeki piksellerin değerlerini kullanır.
+**Not:** **Kernel boyutu**, görüntü işleme filtrelerinde kullanılan bir matrisin boyutunu belirtir. Bu matris, bir pikselin değerini hesaplamak için çevresindeki piksellerin değerlerini kullanır.
 
 Örneğin, 3x3 boyutunda bir kernel, bir pikselin etrafındaki 3x3 pikselin değerlerini kullanarak işlem yapar. 5x5 boyutunda bir kernel, 5x5 pikselin değerlerini kullanır ve benzer şekilde çalışır.
 
 Kernel boyutu, belirli bir uygulamanın gereksinimlerine ve görüntünün özelliklerine bağlı olarak seçilir. Genellikle, daha büyük bir kernel daha fazla komşu pikselin değerini dikkate alır ve daha yumuşak bir sonuç üretir fakat bu aynı zamanda işlemin daha yavaş çalışmasına neden olabilir.
 
 Bu değerler, uygulamanın gereksinimlerine bağlı olarak değişebilir. Daha büyük kernel boyutları, daha fazla komşu pikselin değerini dikkate alarak daha fazla bulanıklaştırma sağlar fakat işlem süresi artabilir.
+
+**Nesne konturu**, bir görüntüdeki nesnenin sınırlarını belirten çizgidir. Yani nesnenin dış hatlarını oluşturan bir çizgidir. Bu kontu, nesnenin dış yüzeyinin bir özeti olarak düşünülebilir. Örneğin, bir siyah arkaplan üzerinde beyaz bir daire resmi düşünelim. Bu durumda, dairenin dış hatlarının dairenin çevresini çizen çizgidir. 
+
+## Morfolojik Operasyonlar
+
+OpenCV'de morfolojik operasyonlar, görüntüler üzerinde şekil ve yapı değişikliklerini gerçekleştiren temel işlemlerdir. Bu operasyonlar genellikle ikili (siyah-beyaz) görüntüler üzerinde uygulanır.
+
+1. **Erozyon (Erosion):** Erozyon, morfolojik görüntü işleme operasyonlarından biridir. Bu operasyon, bir yapıyı küçültmek veya vurgulamak için kullanılır. Özellikle görüntülerdeki kenarları ve ince detayları belirginlestirmek için kullanılır. Erozyon işlemi şu adımlarla gerçekleştirilir:
+
+1. Bir 'kernel' veya 'structuring element' adı verilen küçük bir matris belirlenir. Bu kernel, görüntü üzerinde kaydırılırken kullanılır. 
+2. Kernel, görüntünün her pikseline yerleştirilir ve merkeziyle hizalanır. Bu işlem sırasında kernel, görüntü üzerinde kaydırılır. 
+3. Eğer kernelin içindeki tüm pikseller, orjinal görüntünün üzerinde kaplanıyorsa, bu merkez pikselin değeri değiştirilmez. Eğer en az bir piksel, kernelin dışında kalıyorsa, merkez pikselin değeri kernelin içindeki en küçük değere eşitlenir.
+
+Bu işlem, genellikle nesnelerin kenarlarını ve ince yapılarını vurgulamak için kullanılır. Aynı zamanda gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için de kullanışlıdır. 
+
+Örnek bir uygulama, siyah arkaplan üzerinde beyaz nesnelerin olduğu bir görüntüde erozyon işlemi uygulandığında nesnelerin kenarlarının ve ince yapıların daha belirgin hale gelmesidir.
+
+Erozyon, genellikle açma(opening) işlemi ile birlikte kullanılır. Açma işlemi, önce erozyon ve ardından genişleme işleminin uygulanmasıdır. Bu kombinasyon, gürültüyü azaltmak ve nesne konturlarını düzeltebilmek için etkili bir yöntemdir.
