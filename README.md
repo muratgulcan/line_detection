@@ -306,23 +306,13 @@ Kenar tespiti, bir görüntünün belirgin kenarlarını veya geçiş bölgeleri
 Sobel operatörünün temel amacı, bir pikseldeki yoğunluğun hızla değiştiği bölgeleri tespit etmektir. Bu genellikle kenarlar veya geçiş bölgeleri olarak ifade edilir. Operatör, bu değişiklikleri tespit etmek için görüntünün lokal gradyanını hesaplar.
 
 Sobel operatörü, bir Gaussian bulanıklaştırma işlemi ile birleştirilir. Bu, gürültünün etkilerini azaltarak daha doğru kenar tespiti sağlar.
-X yönündeki Sobel operatörü:
+
 ```math
-G_x = 
-\begin{bmatrix}
--1 & 0 & 1 \\
--2 & 0 & 2 \\
--1 & 0 & 1
-\end{bmatrix}
-```
-```math
-Y yönündeki Sobel operatörü:
-G_y =
-\begin{bmatrix}
--1 & -2 & -1 \\
-0 & 0 & 0 \\
-1 & 2 & 1
-\end{bmatrix}
+\textit{X yönündeki Sobel operatörü:}
+\[ G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix} \]
+\textit{Y yönündeki Sobel operatörü:}
+\[ G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix} \]
+
 ```
 
 
