@@ -251,4 +251,18 @@ Matematiksel olarak, bir iki boyutlu görüntünün gradyanı şu şekildedir:
 \vdots \\
 \dfrac{\partial f}{\partial x_n}(\left.x_{1}, x_{2}, \ldots, x_{n}\right) 
 \end{array}\right]
+```
+
+## Histogram Analizi
+
+Histogram analizi, bir görüntünün piksel değerlerinin istatistiksel dağılımını inceleyen bir işlemdir. Görüntünün renk veya yoğunluk dağılımını gösteren bir grafik olarak ifade edilir. Histogram, bir görüntünün her bir piksel değerini (genellikle 0 ile 255 arasında) temsil eden bir çubuk grafiğidir. X ekseni piksel değerlerini, Y ekseni ise bu değerlere sahip piksellerin sayısını gösterir.
+
+Bu analiz, görüntünün kontrastı, parlaklığı ve renk dengesi gibi özelliklerini anlamak için önemlidir. Örneğin; bir görüntünün histogramı, görüntünün genel kontrastının ne kadar iyi olduğunu gösterebilir. Ayrıca, ışık dengesi ayarları yaparken veya belirli bir renk kanalını vurgulamak istendiğinde de kullanışlı olabilir.
+
+Histogram analizi ayrıca görüntü işleme algoritmalarının performansını değerlendirmek ve ayarlamak için de kullanılır. Örneğin; histogram eşitleme, görüntünün kontrastını artırmak için kullanılan bir tekniktir ve bu, histogram analizi temelinde çalışır.
+
+Bu nedenle histogram analizi, görüntü işleme ve analizi alanında önemli bir araçtır ve birçok farklı uygulama için temel bir birleşendir.
+
+
+
 
