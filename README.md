@@ -1,4 +1,4 @@
-# OpenCV Notları
+# OpenCV Kullanarak Görüntülerde Temel İşlemler
 
 ## İçindekiler
 
