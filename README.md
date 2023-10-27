@@ -313,14 +313,15 @@ X yönündeki Sobel operatörü:
 -1 & 0 & 1 \\
 -2 & 0 & 2 \\
 -1 & 0 & 1
-\end{bmatrix} \ast I \]
+\end{bmatrix} \]
 Y yönündeki Sobel operatörü:
 \[ G_y =
 \begin{bmatrix}
 -1 & -2 & -1 \\
 0 & 0 & 0 \\
 1 & 2 & 1
-\end{bmatrix} \ast I \]
+\end{bmatrix} \]
+
 ```
 
 
