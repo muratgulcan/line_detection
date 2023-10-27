@@ -2,11 +2,12 @@
 
 ## İçindekiler
 
-1. [Temel Özellikler](#1)
+1. [Temel Özellikler](#temel-ozellikler)
+2. [Resmi İçeri Aktarma](#resmi-iceri-aktarma)
 
 OpenCV (Open Source Computer Vision Library), açık kaynaklı bir bilgisayar görüntü işleme kütüphanesidir. OpenCV, özellikle bilgisayar görüşü ve makine öğrenimi uygulamaları için kullanılan bir dizi araç, algoritma ve işlevi içeren bir yazılım kütüphanesidir. Bu kütüphane, bilgisayarlar tarafından işlenen ve anlaşılan görüntülerle ilgilenen birçok projede kullanılır. 
 
-## [Temel Özellikler](#1)
+## [Temel Özellikler](#temel-ozellikler)
 
 1. **Görüntü İşleme:** OpenCV, görüntüler üzerinde birçok temel işlemi gerçekleştirmenizi sağlar, örneğin yeniden boyutlandırma, dönme, filtreleme, kesme ve daha fazlası.
 
@@ -22,7 +23,7 @@ OpenCV (Open Source Computer Vision Library), açık kaynaklı bir bilgisayar g�
 
 OpenCV, C++, Python, Java ve daha birçok programlama dilinde kullanılabilir ve bu, geliştiricilere farklı platformlarda ve projelerde kolayca kullanma esnekeliği sağlar. OpenCV, araştırma, endüstriyel uygulamalar, otonom araçlar, medikal görüntüleme ve daha birçok alanda yaygın olarak kullanılmaktadır.
 
-## Resmi İçeri Aktarma
+## [Resmi İçeri Aktarma](#resmi-iceri-aktarma)
 
 Adı üzerinde bir görüntüyü işlemek için görüntüyü Python’a aktarılmasıdır. Bir veri tipi içerisinde depolanması anlamına gelmektedir. Biz bu depolamayı yaptıktan sonra resim ile istediğimiz işlevi yapabilir hale getirilir. `cv2.imread()`, işlevi ilgili fotoğrafın yolunu (path) yazarak konumu belirlenir. Resimler, iki boyuttan oluşan matrislerdir. 
 
