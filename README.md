@@ -309,10 +309,11 @@ Sobel operatörü, bir Gaussian bulanıklaştırma işlemi ile birleştirilir. B
 
 ```math
 \textit{X yönündeki Sobel operatörü:}
-\[ G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix} \]
+G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix}
+```
+```math
 \textit{Y yönündeki Sobel operatörü:}
-\[ G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix} \]
-
+G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix}
 ```
 
 
