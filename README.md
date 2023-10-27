@@ -12,10 +12,12 @@
 7. [Görüntü Bulanıklaştırma](#goruntu-bulaniklastirma)
 8. [Morfolojik Operasyonlar](#morfolojik-operasyonlar)
 9. [Histogram Analizi](#histogram-analysis)
+9. [Kenar Tespiti ve İzleme](#edge-detection)
 
 OpenCV (Open Source Computer Vision Library), açık kaynaklı bir bilgisayar görüntü işleme kütüphanesidir. OpenCV, özellikle bilgisayar görüşü ve makine öğrenimi uygulamaları için kullanılan bir dizi araç, algoritma ve işlevi içeren bir yazılım kütüphanesidir. Bu kütüphane, bilgisayarlar tarafından işlenen ve anlaşılan görüntülerle ilgilenen birçok projede kullanılır. 
 
 <a id="temel-ozellikler"></a>
+
 ## Temel Özellikler
 
 1. **Görüntü İşleme:** OpenCV, görüntüler üzerinde birçok temel işlemi gerçekleştirmenizi sağlar, örneğin yeniden boyutlandırma, dönme, filtreleme, kesme ve daha fazlası.
@@ -33,11 +35,13 @@ OpenCV (Open Source Computer Vision Library), açık kaynaklı bir bilgisayar g�
 OpenCV, C++, Python, Java ve daha birçok programlama dilinde kullanılabilir ve bu, geliştiricilere farklı platformlarda ve projelerde kolayca kullanma esnekeliği sağlar. OpenCV, araştırma, endüstriyel uygulamalar, otonom araçlar, medikal görüntüleme ve daha birçok alanda yaygın olarak kullanılmaktadır.
 
 <a id="resmi-iceri-aktarma"></a>
+
 ## Resmi İçeri Aktarma
 
 Adı üzerinde bir görüntüyü işlemek için görüntüyü Python’a aktarılmasıdır. Bir veri tipi içerisinde depolanması anlamına gelmektedir. Biz bu depolamayı yaptıktan sonra resim ile istediğimiz işlevi yapabilir hale getirilir. `cv2.imread()`, işlevi ilgili fotoğrafın yolunu (path) yazarak konumu belirlenir. Resimler, iki boyuttan oluşan matrislerdir. 
 
 <a id="sekiller-metin"></a>
+
 ## Şekiller ve Metin
 
 OpenCV’nin bize sunmuş olduğu bir diğer özellik ise görseller üzerine şekiller veya metin eklemektir. Görsellerin üzerine kutucuk şeklinde geometrik çizimler yapılabilir, istenilen boyutlarda istenilen koordinatlara metin eklenebilir. Python’da yapılan örneği ele almak gerekirse:
@@ -47,6 +51,7 @@ OpenCV’nin bize sunmuş olduğu bir diğer özellik ise görseller üzerine ş
 - `cv2.putText(img,"Example", (350,350), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,255))`: putText, adından da anlaşılacağı üzere görselin üzerine metin eklememize yardımcı olur. İlgili parametreler sırasıyla ilk olarak görsel, metin, başlangıç noktası, font, kalınlık ve renktir.
 
 <a id="renk-uzaylari-kanallar"></a>
+
 ## Renk Uzayları ve Kanallar
 
 Renk uzayları ve kanallar, görüntülerin renklerini temsil etmek için kullanılan matematiksel modellerdir. Her bir renk uzayı, renk bilgisini farklı şekillerde temsil eder ve belirli uygulamalarda faydalı olabilmektedir.
@@ -62,6 +67,7 @@ Renk uzayları ve kanallar, görüntülerin renklerini temsil etmek için kullan
 Bu renk uzayları ve kanalları, farklı renk manipülasyonları, renk analizi ve renk tabanlı işlemler için kullanılır. Örneğin, renk filtreleme, nesne tespiti, görüntü eşitleme gibi birçok uygulamada faydalı olabilirler.
 
 <a id="perspektif-carpitma"></a>
+
 ## Perspektif Çarpıtma
 
 Bir nesneye belli bir açıda baktığımızda onun ne olduğunu kavrayabiliriz. Aynı nesnenin açısı biraz döndürüldüğünde gördüğümüz nesnenin ufak bir açıyla döndürüldüğünü gözlemleyebiliriz ve bu durumu yadırgamayız çünkü aynı nesne olduğunun bilincinde olmuş oluruz. Söz konusu makineler olunca bu durum biraz farklı işliyor. Makineye bir nesne tanıttığımızda makine o nesneyi algılar ve hafızasına kaydeder fakat aynı nesneyi ufak bir açıyla döndürüp makinenin nesneyi tanımasını istediğimizde makine bunu yeni bir nesneymiş gibi algılar ve istemediğimiz sonuçlar elde ederiz. Bu nedenle görsellerin perspektifini değiştirerek verileri çoğaltmalıyız. 
@@ -88,6 +94,7 @@ img_output = cv2.warpPerspective(image,matrix,(width,height))
 ```
 
 <a id="goruntuleri-birlestirmek"></a>
+
 ## Görüntüleri Birleştirmek
 
 Kimi durumlarda birden fazla görseli tek bir görselde görmek isteyebiliriz. Örneğin; deniz manzaralı bir görselimiz ve çöl manzaralı bir görselimiz var. Bu iki görseli iç içe konumlandırarak tek bir görselde oluşturarak istenilen durumlarda kullanılabilir hale getirilebilir. Yazılıma ilgili fotoğraf dahil edilmesinin ardından görüntüleri birleştirmek için kullanılan ilgili kod alpha, beta ve gamma değerleriyle birlikte şu şekilde yazılır:
@@ -99,6 +106,7 @@ blended = cv2.addWeighted(src1=img1, alpha=0.9, src2=img2, beta=0.1, gamma = 0)
 Alpha, beta ve gamma değerleri duruma göre değiştirilebilir.
 
 <a id="image-thresholding"></a>
+
 ## Görüntü Eşikleme (Image Thresholding)
 
 OpenCV'de görüntü eşikleme(image thresholding), bir gri tonlu veya renkli görüntüdeki pikselleri belirli bir eşik değeriyle karşılaştırarak, bu değeri geçen pikselleri belirli bir değere ayarlayarak veya belirli bir değere göre işleyerek görüntüyü sadeleştiren bir işlemdir.
@@ -144,6 +152,7 @@ plt.show()
 `type=cv2.THRESH_BINARY`: Bu, eşikleme türünü belirtir. `cv2.THRESH_BINARY`, eşik değerini geçen pikselleri maxval değerine ayarlar, geçmeyenleri ise 0'a ayarlar. Yani, eşiklemeden sonra sadece siyah ve beyaz pikseller olur.
 
 <a id="goruntu-bulaniklastirma"></a>
+
 ## Görüntü Bulanıklaştırma (Image Blurring)
 
 Görüntü bulanıklaştırma, bir görüntünün üzerindeki detayları yumuşatarak ve piksel değerlerini düzenleyerek, görüntüdeki gürültüyü azaltmak veya önemli özellikleri vurgulamak için kullanılan bir işlemdir. Bu işlem, görüntü işleme uygulamalarında yaygın olarak kullanılır.
@@ -209,6 +218,7 @@ Bu değerler, uygulamanın gereksinimlerine bağlı olarak değişebilir. Daha b
 **Nesne konturu**, bir görüntüdeki nesnenin sınırlarını belirten çizgidir. Yani nesnenin dış hatlarını oluşturan bir çizgidir. Bu kontu, nesnenin dış yüzeyinin bir özeti olarak düşünülebilir. Örneğin, bir siyah arkaplan üzerinde beyaz bir daire resmi düşünelim. Bu durumda, dairenin dış hatlarının dairenin çevresini çizen çizgidir. 
 
 <a id="morfolojik-operasyonlar"></a>
+
 ## Morfolojik Operasyonlar
 
 OpenCV'de morfolojik operasyonlar, görüntüler üzerinde şekil ve yapı değişikliklerini gerçekleştiren temel işlemlerdir. Bu operasyonlar genellikle ikili (siyah-beyaz) görüntüler üzerinde uygulanır.
@@ -286,6 +296,31 @@ Histogram analizi ayrıca görüntü işleme algoritmalarının performansını 
 
 Bu nedenle histogram analizi, görüntü işleme ve analizi alanında önemli bir araçtır ve birçok farklı uygulama için temel bir birleşendir.
 
+<a id="edge-detection"></a>
 
+## Kenar Tespiti ve İzleme
+
+Kenar tespiti, bir görüntünün belirgin kenarlarını veya geçiş bölgelerini belirlemek için kullanılan bir işlemdir. Bu, piksel değerlerinin hızla değiştiği bölgeleri belirlemek anlamına gelmektedir. Kenarlar, nesnelerin sınırları, şekillerin dış hatları veya önemli yapıları temsil eder. Kenar tespiti, görüntü işlemenin önemli bir adımıdır çünkü birçok nesne veya özellik kenarlarını içerir. Örneğin, bir nesnenin sınırlarının belirlenmesi, nesne takibi veya nesne tanıma için kritik bir adımdır. Kenarları tespit etmek için kullanılan algoritmalar şunlardır:
+
+1. **Sobel Operatörü:** Sobel operatörü, bir görüntünün gradyanını hesaplamak ve kenarları tespit etmek için kullanılan bir görüntü işleme operatörüdür. X ve Y yönlerindeki türevleri kullanarak görüntünün gradyanını bulur. Bu, kenarların belirginleştirilmesi için kullanılır. 
+Sobel operatörünün temel amacı, bir pikseldeki yoğunluğun hızla değiştiği bölgeleri tespit etmektir. Bu genellikle kenarlar veya geçiş bölgeleri olarak ifade edilir. Operatör, bu değişiklikleri tespit etmek için görüntünün lokal gradyanını hesaplar.
+
+Sobel operatörü, bir Gaussian bulanıklaştırma işlemi ile birleştirilir. Bu, gürültünün etkilerini azaltarak daha doğru kenar tespiti sağlar.
+
+```math
+X yönündeki Sobel operatörü:
+\begin{bmatrix}
+-1 & 0 & 1 \\
+-2 & 0 & 2 \\
+-1 & 0 & 1
+\end{bmatrix} \ast I \]
+Y yönündeki Sobel operatörü:
+\[ G_y =
+\begin{bmatrix}
+-1 & -2 & -1 \\
+0 & 0 & 0 \\
+1 & 2 & 1
+\end{bmatrix} \ast I \]
+```
 
 
