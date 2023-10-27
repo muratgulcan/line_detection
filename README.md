@@ -316,4 +316,32 @@ G_x = \begin{bmatrix} -1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1 \end{bmatrix}
 G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix}
 ```
 
+**Sobel Operatörünün Uygulama Adımları:**
 
+1. RGN görüntüyü gri tona dönüştürerek, işlemi daha etkili hale getirilir.
+
+2. Gaussian bulanıklaştırma yöntemi ile görüntü hafifçe yumuşatılarak gürültü azaltılır.
+
+3. Sobel operatörü uygulanarak $G_x$ ve $G_y$ matrislerini kullanılması ile gradyanları hesaplanır.
+
+4. $G_x$ ve $G_y$ değerleri kullanılarak kenar yoğunluklarını ve açılarını hesaplar.
+
+5. Kenar eşikleşeyerek belirli bir eşik değeri üzerinde kenarlar vurgulanır.
+
+2. **Canny Kenar Dedektörü:** Canny kenar dedektörü, görüntülerdeki kenarları tespit etmek için kullanılan çok aşamalı bir kenar dedektörüdür. Canny kenar dedektörü, diğer kenar tespit yöntemlerine göre daha sofistike bir yaklaşım sunar ve genellikle daha iyi sonuçlar verir.
+
+Canny kenar dedektörünün temel amacı, bir görüntünün gradyanını ve kenar yoğunluğunu hesaplamak, ardından kenarları belirginleştirmektir.
+
+Canny kenar dedektörünün aşamaları şunlardır:
+
+1. Gauss Filtresi uygulanarak görüntüdeki gürültüyü azaltır ve kenarların yanlışlıkla tespit edilmesini önler.
+
+2. Görüntünün gradyanı $G_x$ ve $G_y$ yönlerinde hesaplanır. Bu, görüntünün türevlerini alarak kenar bilgisini bulmayı içerir.
+
+3. $G_x$ ve $G_y$ değerleri kullanılarak her bir pikseldeki kenar yoğunluğu ve yönü hesaplanır.
+
+4. Kenar yoğunlukları eşik değerlerine göre karşılaştırır. Belirli bir eşik değeri üzerindeki pikseller, kenar olarak işaretlenir.
+
+5. Kenar İzleme (Hysteresis Thresholding): Kenar olarak işaretlenmiş pikseller arasındaki bağlantıları kurar. Böylece kesintiye uğramış kenarları birleştirir. 
+
+Canny kenar dedektörü, diğer kenar dedektörlerine göre daha iyi sonuçlar verir ve gürültüye daha dayanıklıdır.
