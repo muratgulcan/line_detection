@@ -11,7 +11,7 @@ eroded = cv2.erode(image, kernel, iterations=1)
 
 gradient = cv2.absdiff(dilated,eroded)
 
-cv2.imshow("Orijinal Görüntü", image)
+cv2.imshow("Orginal Image", image)
 cv2.imshow("Morfolojik Gradyan", gradient)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

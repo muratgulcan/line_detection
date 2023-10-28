@@ -318,7 +318,7 @@ G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix}
 
 **Sobel Operatörünün Uygulama Adımları:**
 
-1. RGN görüntüyü gri tona dönüştürerek, işlemi daha etkili hale getirilir.
+1. RGB görüntüyü gri tona dönüştürerek, işlemi daha etkili hale getirilir.
 
 2. Gaussian bulanıklaştırma yöntemi ile görüntü hafifçe yumuşatılarak gürültü azaltılır.
 
@@ -326,7 +326,7 @@ G_y = \begin{bmatrix} -1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1 \end{bmatrix}
 
 4. $G_x$ ve $G_y$ değerleri kullanılarak kenar yoğunluklarını ve açılarını hesaplar.
 
-5. Kenar eşikleşeyerek belirli bir eşik değeri üzerinde kenarlar vurgulanır.
+5. Kenar eşikleyerek belirli bir eşik değeri üzerinde kenarlar vurgulanır.
 
 2. **Canny Kenar Dedektörü:** Canny kenar dedektörü, görüntülerdeki kenarları tespit etmek için kullanılan çok aşamalı bir kenar dedektörüdür. Canny kenar dedektörü, diğer kenar tespit yöntemlerine göre daha sofistike bir yaklaşım sunar ve genellikle daha iyi sonuçlar verir.
 
