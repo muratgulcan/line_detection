@@ -345,3 +345,11 @@ Canny kenar dedektörünün aşamaları şunlardır:
 5. Kenar İzleme (Hysteresis Thresholding): Kenar olarak işaretlenmiş pikseller arasındaki bağlantıları kurar. Böylece kesintiye uğramış kenarları birleştirir. 
 
 Canny kenar dedektörü, diğer kenar dedektörlerine göre daha iyi sonuçlar verir ve gürültüye daha dayanıklıdır.
+
+-----
+
+Doğrusallığın formülü:
+
+```math
+y = ax + b
+```
