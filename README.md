@@ -351,5 +351,5 @@ Canny kenar dedektörü, diğer kenar dedektörlerine göre daha iyi sonuçlar v
 Doğrusallığın formülü:
 
 ```math
-y = ax + b
+y = mx + b
 ```
